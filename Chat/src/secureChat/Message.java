@@ -1,6 +1,12 @@
 package secureChat;
 
-public class Message {
+import java.io.Serializable;
+
+public class Message implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -3348546542463134980L;
 	private User sender;
 	private User recipient;
 	private String message;
@@ -25,5 +31,9 @@ public class Message {
 	public String getMessage()
 	{
 		return message;
+	}
+	
+	public String toString(){
+		return ( "from\t: " + getSender() + "\nto\t: " + getRecipient() + "\nmessage\t: " + getMessage() );
 	}
 }
